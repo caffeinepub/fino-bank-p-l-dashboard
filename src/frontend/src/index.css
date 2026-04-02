@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Navy banking theme */
+    --background: 0.965 0.008 240;
+    --foreground: 0.18 0.015 265;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.015 265;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.015 265;
+    --primary: 0.22 0.085 265;
+    --primary-foreground: 0.985 0 0;
+    --secondary: 0.94 0.012 240;
+    --secondary-foreground: 0.22 0.085 265;
+    --muted: 0.94 0.012 240;
+    --muted-foreground: 0.52 0.012 265;
+    --accent: 0.5 0.095 265;
+    --accent-foreground: 0.985 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.91 0.015 240;
+    --input: 0.91 0.015 240;
+    --ring: 0.22 0.085 265;
+    --chart-1: 0.28 0.105 265;
+    --chart-2: 0.5 0.095 265;
+    --chart-3: 0.646 0.222 41.116;
+    --chart-4: 0.6 0.118 184.704;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.22 0.085 265;
+    --sidebar-foreground: 0.985 0 0;
+    --sidebar-primary: 0.5 0.095 265;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.28 0.105 265;
+    --sidebar-accent-foreground: 0.985 0 0;
+    --sidebar-border: 0.3 0.085 265;
+    --sidebar-ring: 0.5 0.095 265;
+
+    /* Custom bank tokens */
+    --navy: 0.22 0.085 265;
+    --navy-dark: 0.16 0.075 265;
+    --page-bg: 0.965 0.008 240;
+    --profit-green: 0.55 0.17 145;
+    --loss-red: 0.577 0.245 27.325;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-navy {
+    background-color: oklch(var(--navy));
+  }
+  .bg-navy-dark {
+    background-color: oklch(var(--navy-dark));
+  }
+  .text-navy {
+    color: oklch(var(--navy));
+  }
+  .border-navy {
+    border-color: oklch(var(--navy));
+  }
+  .text-profit {
+    color: oklch(var(--profit-green));
+  }
+  .text-loss {
+    color: oklch(var(--loss-red));
+  }
+  .bg-profit {
+    background-color: oklch(var(--profit-green) / 0.1);
+  }
+  .bg-loss {
+    background-color: oklch(var(--loss-red) / 0.1);
+  }
+}
